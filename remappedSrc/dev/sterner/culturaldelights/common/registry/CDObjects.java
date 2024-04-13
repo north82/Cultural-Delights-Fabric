@@ -1,6 +1,8 @@
 package dev.sterner.culturaldelights.common.registry;
 
-import dev.sterner.culturaldelights.CulturalDelights;
+import com.nhoryzon.mc.farmersdelight.FarmersDelightMod;
+import com.nhoryzon.mc.farmersdelight.block.WildCropBlock;
+import com.nhoryzon.mc.farmersdelight.registry.BlocksRegistry;
 import dev.sterner.culturaldelights.common.block.*;
 import dev.sterner.culturaldelights.common.utils.Constants;
 import dev.sterner.culturaldelights.common.world.AvocadoPitGenerator;
@@ -13,18 +15,14 @@ import net.fabricmc.fabric.api.registry.FuelRegistry;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
 import net.minecraft.resources.ResourceLocation;
-import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
-import net.minecraft.world.level.block.*;
-import vectorwing.farmersdelight.FarmersDelight;
-import vectorwing.farmersdelight.common.block.WildCropBlock;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
-import vectorwing.farmersdelight.common.registry.ModCreativeTabs;
-import vectorwing.farmersdelight.common.registry.ModItems;
-
+import net.minecraft.world.level.block.Block;
+import net.minecraft.world.level.block.Blocks;
+import net.minecraft.world.level.block.RotatedPillarBlock;
+import net.minecraft.world.level.block.SaplingBlock;
 import java.util.LinkedHashMap;
 import java.util.Map;
 
@@ -85,9 +83,9 @@ public class CDObjects {
 
     public static final Block AVOCADO_BUNDLE = register("avocado_bundle", new Block(FabricBlockSettings.copy(Blocks.PUMPKIN)), settings(), true);
 
-    public static final Block WILD_CUCUMBERS = register("wild_cucumbers", new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)), settings(), true);
-    public static final Block WILD_CORN = register("wild_corn", new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)), settings(), true);
-    public static final Block WILD_EGGPLANTS = register("wild_eggplants", new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)), settings(), true);
+    public static final Block WILD_CUCUMBERS = register("wild_cucumbers", new WildCropBlock(), settings(), true);
+    public static final Block WILD_CORN = register("wild_corn", new WildCropBlock(), settings(), true);
+    public static final Block WILD_EGGPLANTS = register("wild_eggplants", new WildCropBlock(), settings(), true);
 
     public static final Block AVOCADO_LOG = register("avocado_log", new RotatedPillarBlock(FabricBlockSettings.copy(Blocks.JUNGLE_LOG)), settings(), true);
     public static final Block AVOCADO_WOOD = register("avocado_wood", new RotatedPillarBlock(FabricBlockSettings.copy(Blocks.JUNGLE_WOOD)), settings(), true);
@@ -103,11 +101,11 @@ public class CDObjects {
 
     public static final Block AVOCADO_PIT = register("avocado_pit", new AvocadoPitBlock(new AvocadoPitGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)), settings(), true);
 
-    public static final Block AVOCADO_CRATE = register("avocado_crate", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)), settings(), true);
-    public static final Block CUCUMBER_CRATE = register("cucumber_crate", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)), settings(), true);
-    public static final Block PICKLE_CRATE = register("pickle_crate", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)), settings(), true);
-    public static final Block CORN_COB_CRATE = register("corn_cob_crate", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)), settings(), true);
-    public static final Block EGGPLANT_CRATE = register("eggplant_crate", new Block(FabricBlockSettings.copy(Blocks.OAK_PLANKS).strength(2.0F, 3.0F).sound(SoundType.WOOD)), settings(), true);
+    public static final Block AVOCADO_CRATE = register("avocado_crate", new Block(FabricBlockSettings.copy(BlocksRegistry.CARROT_CRATE.get())), settings(), true);
+    public static final Block CUCUMBER_CRATE = register("cucumber_crate", new Block(FabricBlockSettings.copy(BlocksRegistry.CARROT_CRATE.get())), settings(), true);
+    public static final Block PICKLE_CRATE = register("pickle_crate", new Block(FabricBlockSettings.copy(BlocksRegistry.CARROT_CRATE.get())), settings(), true);
+    public static final Block CORN_COB_CRATE = register("corn_cob_crate", new Block(FabricBlockSettings.copy(BlocksRegistry.CARROT_CRATE.get())), settings(), true);
+    public static final Block EGGPLANT_CRATE = register("eggplant_crate", new Block(FabricBlockSettings.copy(BlocksRegistry.CARROT_CRATE.get())), settings(), true);
 
 
     public static final Block EXOTIC_ROLL_MEDLEY = register("exotic_roll_medley", new ExoticRollMedleyBlock(), settings(), true);
@@ -136,7 +134,7 @@ public class CDObjects {
     public static void init() {
         BLOCKS.keySet().forEach(block -> Registry.register(BuiltInRegistries.BLOCK, BLOCKS.get(block), block));
         ITEMS.keySet().forEach(item -> Registry.register(BuiltInRegistries.ITEM, ITEMS.get(item), item));
-        ItemGroupEvents.modifyEntriesEvent(CulturalDelights.ITEM_GROUP).register(entries -> ITEMS.keySet().forEach(entries::accept));
+        ItemGroupEvents.modifyEntriesEvent(FarmersDelightMod.ITEM_GROUP).register(entries -> ITEMS.keySet().forEach(entries::accept));
 
 
         FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();

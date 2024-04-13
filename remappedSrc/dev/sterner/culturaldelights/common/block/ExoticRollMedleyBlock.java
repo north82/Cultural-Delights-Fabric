@@ -1,5 +1,6 @@
 package dev.sterner.culturaldelights.common.block;
 
+import com.nhoryzon.mc.farmersdelight.block.FeastBlock;
 import dev.sterner.culturaldelights.common.registry.CDObjects;
 import java.util.Arrays;
 import java.util.List;
@@ -17,7 +18,6 @@ import net.minecraft.world.phys.shapes.BooleanOp;
 import net.minecraft.world.phys.shapes.CollisionContext;
 import net.minecraft.world.phys.shapes.Shapes;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.block.FeastBlock;
 
 public class ExoticRollMedleyBlock extends FeastBlock {
     public static final IntegerProperty ROLL_SERVINGS = IntegerProperty.create("servings", 0, 8);
@@ -26,7 +26,7 @@ public class ExoticRollMedleyBlock extends FeastBlock {
     public final List<Item> riceRollServings;
 
     public ExoticRollMedleyBlock() {
-        super(Properties.copy(Blocks.CAKE), () -> CDObjects.TROPICAL_ROLL, true);
+        super(Properties.copy(Blocks.CAKE), CDObjects.TROPICAL_ROLL, true);
         this.riceRollServings = Arrays.asList(
                 CDObjects.PUFFERFISH_ROLL,
                 CDObjects.PUFFERFISH_ROLL,
@@ -49,7 +49,7 @@ public class ExoticRollMedleyBlock extends FeastBlock {
     }
 
     @Override
-    public ItemStack getServingItem(BlockState state) {
+    public ItemStack getServingStack(BlockState state) {
         return new ItemStack(riceRollServings.get(state.getValue(getServingsProperty()) - 1));
     }
 

@@ -1,6 +1,10 @@
 package dev.sterner.culturaldelights.common.block;
 
+import com.nhoryzon.mc.farmersdelight.block.BuddingBushBlock;
+import com.nhoryzon.mc.farmersdelight.registry.BlocksRegistry;
+import com.nhoryzon.mc.farmersdelight.util.BlockStateUtils;
 import dev.sterner.culturaldelights.common.registry.CDObjects;
+import net.minecraft.block.*;
 import net.minecraft.core.BlockPos;
 import net.minecraft.core.Direction;
 import net.minecraft.server.level.ServerLevel;
@@ -21,7 +25,6 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties;
 import net.minecraft.world.level.block.state.properties.BooleanProperty;
 import net.minecraft.world.level.block.state.properties.IntegerProperty;
 import net.minecraft.world.phys.shapes.VoxelShape;
-import vectorwing.farmersdelight.common.registry.ModBlocks;
 
 public class CornBlock extends BushBlock implements BonemealableBlock {
     public static final IntegerProperty AGE;
@@ -46,8 +49,8 @@ public class CornBlock extends BushBlock implements BonemealableBlock {
     }
 
     @Override
-    public boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
-        return floor.is(Blocks.FARMLAND) || floor.is(ModBlocks.RICH_SOIL_FARMLAND.get());
+    protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
+        return floor.is(Blocks.FARMLAND) || floor.is(BlocksRegistry.RICH_SOIL_FARMLAND.get());
     }
 
     public IntegerProperty getAgeProperty() {

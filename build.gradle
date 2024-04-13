@@ -1,5 +1,5 @@
 plugins {
-	id 'fabric-loom' version '1.0-SNAPSHOT'
+	id 'fabric-loom' version '1.5-SNAPSHOT'
 	id 'maven-publish'
 }
 
@@ -11,6 +11,21 @@ version = project.mod_version
 group = project.maven_group
 
 repositories {
+	maven {
+		name = "Greenhouse Maven"
+		url = 'https://maven.greenhouseteam.dev/releases/'
+	}
+	maven { url = "https://mvn.devos.one/snapshots/" } // Porting Lib
+	maven {
+		url "https://maven.jamieswhiteshirt.com/libs-release" // Reach Entity Attributes (Required by Porting Lib)
+		content {
+			includeGroup "com.jamieswhiteshirt"
+		}
+	}
+	maven {
+		name = "Jitpack, ASM, MixinExtras"
+		url  = "https://jitpack.io"
+	}
 	maven {
 		name "cloth config, rei"
 		url "https://maven.shedaniel.me"
@@ -24,13 +39,18 @@ repositories {
 
 dependencies {
 	minecraft "com.mojang:minecraft:${project.minecraft_version}"
-	mappings "net.fabricmc:yarn:${project.yarn_mappings}:v2"
+	mappings loom.officialMojangMappings()
 	modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
 
 	modImplementation "net.fabricmc.fabric-api:fabric-api:${project.fabric_version}"
-	modImplementation "curse.maven:farmersdelightfabric-482834:${project.delight_version}"
+	modImplementation("vectorwing:FarmersDelight:${fdrf_version}") {
+		exclude(group: "net.fabricmc")
+	}
 
 	modImplementation include("com.terraformersmc.terraform-api:terraform-wood-api-v1:${project.terraform_wood_api_version}")
+
+	//Fabric ASM
+	modImplementation include ("com.github.Chocohead:Fabric-ASM:v2.3")
 }
 
 processResources {

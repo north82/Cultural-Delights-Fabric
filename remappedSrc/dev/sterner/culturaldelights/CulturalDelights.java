@@ -8,21 +8,16 @@ import dev.sterner.culturaldelights.common.utils.Constants;
 import dev.sterner.culturaldelights.common.world.AvocadoBundleTreeDecorator;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
-import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
 import net.fabricmc.fabric.api.loot.v2.LootTableEvents;
 import net.fabricmc.fabric.api.object.builder.v1.trade.TradeOfferHelper;
 import net.minecraft.core.Registry;
 import net.minecraft.core.registries.BuiltInRegistries;
-import net.minecraft.core.registries.Registries;
-import net.minecraft.network.chat.Component;
-import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EntityType;
 import net.minecraft.world.entity.npc.VillagerProfession;
 import net.minecraft.world.entity.npc.VillagerTrades;
-import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.trading.MerchantOffer;
@@ -32,14 +27,11 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import vectorwing.farmersdelight.FarmersDelight;
 
 public class CulturalDelights implements ModInitializer {
 	public static final String MOD_ID = "culturaldelights";
 	private static final ResourceLocation SQUID_LOOT_TABLE_ID = EntityType.SQUID.getDefaultLootTable();
 	private static final ResourceLocation GLOW_SQUID_LOOT_TABLE_ID = EntityType.GLOW_SQUID.getDefaultLootTable();
-
-	public static final ResourceKey<CreativeModeTab> ITEM_GROUP = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID));
 
 	public static final TreeDecoratorType<AvocadoBundleTreeDecorator> AVOCADO_BUNDLE_TREE_DECORATOR_TYPE = register(Constants.id("avocado_bundle"), AvocadoBundleTreeDecorator.CODEC);
 
@@ -80,11 +72,6 @@ public class CulturalDelights implements ModInitializer {
 				tableBuilder.withPool(poolBuilder);
 			}
 		});
-
-		Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, ITEM_GROUP, FabricItemGroup.builder()
-				.icon(() -> new ItemStack(CDObjects.AVOCADO))
-				.title(Component.translatable(MOD_ID + ".group.main"))
-				.build());
 	}
 
 	public static class EmeraldToItemOffer implements VillagerTrades.ItemListing {

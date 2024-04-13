@@ -1,4 +1,8 @@
 {
+  "itemGroup.culturaldelights": "Cultural Delight",
+
+  "culturaldelights.group.main": "Cultural Delight",
+
   "item.culturaldelights.cucumber_seeds": "Cucumber Seeds",
   "item.culturaldelights.eggplant_seeds": "Eggplant Seeds",
   "item.culturaldelights.corn_kernels": "Corn Kernels",

@@ -1,10 +1,10 @@
 package dev.sterner.culturaldelights.common.registry;
 
+import com.nhoryzon.mc.farmersdelight.item.ConsumableItem;
+import com.nhoryzon.mc.farmersdelight.registry.EffectsRegistry;
 import net.minecraft.world.effect.MobEffectInstance;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.food.FoodProperties;
-import vectorwing.farmersdelight.common.item.ConsumableItem;
-import vectorwing.farmersdelight.common.registry.ModEffects;
 
 public class CDFoodComponents {
     //INGREDIENTS
@@ -58,10 +58,10 @@ public class CDFoodComponents {
     public static final FoodProperties PORK_WRAP = (new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).build();
     public static final FoodProperties FISH_TACO = (new FoodProperties.Builder()).nutrition(10).saturationMod(0.8F).build();
     public static final FoodProperties HEARTY_SALAD = (new FoodProperties.Builder()).nutrition(7).saturationMod(0.7F)
-            .effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), ConsumableItem.EAT_DURATION, 0), 1.0F).build();
+            .effect(new MobEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0), 1.0F).build();
     public static final FoodProperties FRIED_EGGPLANT_PASTA = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.9F)
-            .effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), ConsumableItem.EAT_DURATION, 0), 1.0F).build();
+            .effect(new MobEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0), 1.0F).build();
     public static final FoodProperties EGGPLANT_BURGER = (new FoodProperties.Builder()).nutrition(12).saturationMod(0.7F).build();
     public static final FoodProperties SPICY_CURRY = (new FoodProperties.Builder()).nutrition(12).saturationMod(1.3F)
-            .effect(new MobEffectInstance(ModEffects.NOURISHMENT.get(), ConsumableItem.EAT_DURATION, 0), 1.0F).build();
+            .effect(new MobEffectInstance(EffectsRegistry.NOURISHMENT.get(), ConsumableItem.LONG_DURATION, 0), 1.0F).build();
 }

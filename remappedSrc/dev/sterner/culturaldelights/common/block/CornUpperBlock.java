@@ -47,7 +47,7 @@ public class CornUpperBlock extends CropBlock {
     }
 
     @Override
-    public boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
+    protected boolean mayPlaceOn(BlockState floor, BlockGetter world, BlockPos pos) {
         return floor.getBlock() == CDObjects.CORN_CROP;
     }
 
