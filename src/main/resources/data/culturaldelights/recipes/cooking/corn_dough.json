@@ -2,13 +2,13 @@
   "type": "farmersdelight:cooking",
   "ingredients": [
     {
-      "tag": "c:crops/corn"
+      "tag": "c:foods/vegetables/corns"
     },
     {
-      "tag": "c:crops/corn"
+      "tag": "c:foods/vegetables/corns"
     },
     {
-      "tag": "c:crops/corn"
+      "tag": "c:foods/vegetables/corns"
     }
   ],
   "result": {

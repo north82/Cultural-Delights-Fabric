@@ -13,10 +13,10 @@
       "item": "farmersdelight:cooked_rice"
     },
     "?": {
-      "tag": "culturaldelights:avocados"
+      "tag": "c:foods/fruit/avocado"
     },
     "!": {
-      "tag": "culturaldelights:cucumbers"
+      "tag": "c:foods/vegetables/cucumber"
     }
   },
   "result": {

@@ -3,6 +3,7 @@ package dev.sterner.culturaldelights;
 import com.mojang.serialization.Codec;
 import dev.sterner.culturaldelights.common.registry.CDObjects;
 import dev.sterner.culturaldelights.common.registry.CDConfiguredFeatures;
+import dev.sterner.culturaldelights.common.registry.CDTags;
 import dev.sterner.culturaldelights.common.registry.CDWorldGenerators;
 import dev.sterner.culturaldelights.common.utils.Constants;
 import dev.sterner.culturaldelights.common.world.AvocadoBundleTreeDecorator;
@@ -85,6 +86,8 @@ public class CulturalDelights implements ModInitializer {
 				.icon(() -> new ItemStack(CDObjects.AVOCADO))
 				.title(Component.translatable(MOD_ID + ".group.main"))
 				.build());
+
+		CDTags.init();
 	}
 
 	public static class EmeraldToItemOffer implements VillagerTrades.ItemListing {

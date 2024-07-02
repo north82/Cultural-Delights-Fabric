@@ -2,13 +2,13 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "c:tortillas"
+      "tag": "c:foods/tortillas"
     },
     {
-      "tag": "c:cooked_fishes"
+      "tag": "c:foods/cooked_fishes"
     },
     {
-      "tag": "c:crops/tomato"
+      "tag": "c:foods/vegetables/tomatoes"
     },
     {
       "tag": "c:salad_ingredients"

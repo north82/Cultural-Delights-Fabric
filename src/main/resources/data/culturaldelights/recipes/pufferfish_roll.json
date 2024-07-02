@@ -5,10 +5,10 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "item": "minecraft:pufferfish"
+      "tag": "c:foods/raw_fishes/pufferfish"
     },
     {
-      "item": "minecraft:pufferfish"
+      "tag": "c:foods/raw_fishes/pufferfish"
     }
   ],
   "result": {

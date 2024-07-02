@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#c:vegetables/eggplant",
+    "#c:foods/vegetables/eggplant",
     "culturaldelights:cut_eggplant"
   ]
 }

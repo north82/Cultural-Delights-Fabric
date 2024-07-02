@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "item": "culturaldelights:squid"
+      "tag": "c:foods/squid"
     }
   ],
   "tool": {

@@ -8,10 +8,10 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "tag": "c:calamari"
+      "tag": "c:foods/calamari"
     },
     {
-      "tag": "c:calamari"
+      "tag": "c:foods/calamari"
     }
   ],
   "result": {

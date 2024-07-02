@@ -1,7 +1,7 @@
 {
   "replace": false,
   "values": [
-    "#c:fruits/avocado",
+    "#c:foods/fruits/avocado",
     "culturaldelights:cut_avocado"
   ]
 }

@@ -10,16 +10,16 @@
   "type": "brewinandchewin:fermenting",
   "ingredients": [
     {
-      "item": "culturaldelights:cucumber"
+      "item": "c:foods/vegetables/cucumber"
     },
     {
-      "item": "culturaldelights:cucumber"
+      "item": "c:foods/vegetables/cucumber"
     },
     {
-      "item": "culturaldelights:cucumber"
+      "item": "c:foods/vegetables/cucumber"
     },
     {
-      "item": "culturaldelights:cucumber"
+      "item": "c:foods/vegetables/cucumber"
     }
   ],
   "result": {

@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "c:crops/tomato"
+      "tag": "c:foods/vegetables/tomatoes"
     },
     {
       "tag": "culturaldelights:avocados"
     },
     {
-      "tag": "c:crops/corn"
+      "tag": "c:foods/vegetables/corn"
     },
     {
-      "tag": "c:crops/cucumber"
+      "tag": "c:foods/vegetables/cucumber"
     },
     {
       "item": "minecraft:bowl"

@@ -8,10 +8,10 @@
       "item": "farmersdelight:cooked_rice"
     },
     {
-      "item": "minecraft:tropical_fish"
+      "tag": "c:foods/raw_fishes/tropical_fish"
     },
     {
-      "item": "minecraft:tropical_fish"
+      "tag": "c:foods/raw_fishes/tropical_fish"
     }
   ],
   "result": {
