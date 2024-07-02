@@ -2,10 +2,6 @@
   "type": "minecraft:tree",
   "config": {
     "decorators": [
-      {
-        "type": "culturaldelights:avocado_bundle",
-        "probability": 1
-      }
     ],
     "dirt_provider": {
       "type": "minecraft:simple_state_provider",
@@ -19,15 +15,32 @@
       "radius": 3
     },
     "foliage_provider": {
-      "type": "minecraft:simple_state_provider",
-      "state": {
-        "Name": "culturaldelights:avocado_leaves",
-        "Properties": {
-          "distance": "7",
-          "persistent": "false",
-          "waterlogged": "false"
+      "type": "minecraft:weighted_state_provider",
+      "entries": [
+        {
+          "data": {
+            "Name": "culturaldelights:avocado_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false"
+            }
+          },
+          "weight": 3
+        },
+        {
+          "data": {
+            "Name": "culturaldelights:fruiting_avocado_leaves",
+            "Properties": {
+              "distance": "7",
+              "persistent": "false",
+              "waterlogged": "false",
+              "age": 4
+            }
+          },
+          "weight": 1
         }
-      }
+      ]
     },
     "force_dirt": false,
     "ignore_vines": true,

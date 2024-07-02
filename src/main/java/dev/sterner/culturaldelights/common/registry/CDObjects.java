@@ -19,6 +19,7 @@ import net.minecraft.world.item.BowlFoodItem;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemNameBlockItem;
 import net.minecraft.world.level.block.*;
+import net.minecraft.world.level.block.state.BlockBehaviour;
 import vectorwing.farmersdelight.FarmersDelight;
 import vectorwing.farmersdelight.common.block.WildCropBlock;
 import vectorwing.farmersdelight.common.registry.ModBlocks;
@@ -82,8 +83,8 @@ public class CDObjects {
     public static final Item CALAMARI_ROLL = register("calamari_roll", new Item(settings().food(CDFoodComponents.CALAMARI_ROLL)));
 
 
-
-    public static final Block AVOCADO_BUNDLE = register("avocado_bundle", new Block(FabricBlockSettings.copy(Blocks.PUMPKIN)), settings(), true);
+    public static final Block FRUITING_AVOCADO_LEAVES = register("fruiting_avocado_leaves",
+            new FruitingLeaves(BlockBehaviour.Properties.copy(Blocks.JUNGLE_LEAVES)), settings(), false);
 
     public static final Block WILD_CUCUMBERS = register("wild_cucumbers", new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)), settings(), true);
     public static final Block WILD_CORN = register("wild_corn", new WildCropBlock(MobEffects.DAMAGE_BOOST, 6, FabricBlockSettings.copyOf(Blocks.TALL_GRASS)), settings(), true);
@@ -91,7 +92,7 @@ public class CDObjects {
 
     public static final Block AVOCADO_LOG = register("avocado_log", new RotatedPillarBlock(FabricBlockSettings.copy(Blocks.JUNGLE_LOG)), settings(), true);
     public static final Block AVOCADO_WOOD = register("avocado_wood", new RotatedPillarBlock(FabricBlockSettings.copy(Blocks.JUNGLE_WOOD)), settings(), true);
-    public static final Block AVOCADO_LEAVES = register("avocado_leaves", new RotatedPillarBlock(FabricBlockSettings.copy(Blocks.JUNGLE_LEAVES)), settings(), true);
+    public static final Block AVOCADO_LEAVES = register("avocado_leaves", new LeavesBlock(FabricBlockSettings.copy(Blocks.JUNGLE_LEAVES)), settings(), true);
 
     public static final Block AVOCADO_SAPLING = register("avocado_sapling", new SaplingBlock(new AvocadoSaplingGenerator(), FabricBlockSettings.copy(Blocks.OAK_SAPLING)), settings(), true);
 
@@ -141,6 +142,7 @@ public class CDObjects {
 
         FlammableBlockRegistry flammableRegistry = FlammableBlockRegistry.getDefaultInstance();
         flammableRegistry.add(AVOCADO_LEAVES, 30, 60);
+        flammableRegistry.add(FRUITING_AVOCADO_LEAVES, 30, 60);
         flammableRegistry.add(AVOCADO_LOG, 5, 5);
         flammableRegistry.add(AVOCADO_WOOD, 5, 5);
 
@@ -166,6 +168,6 @@ public class CDObjects {
 
         compostRegistry.add(POPCORN, 0.85f);
 
-        compostRegistry.add(AVOCADO_BUNDLE, 1f);
+        compostRegistry.add(FRUITING_AVOCADO_LEAVES, 0.65f);
     }
 }

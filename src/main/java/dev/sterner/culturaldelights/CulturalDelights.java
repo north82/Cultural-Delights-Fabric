@@ -6,7 +6,6 @@ import dev.sterner.culturaldelights.common.registry.CDConfiguredFeatures;
 import dev.sterner.culturaldelights.common.registry.CDTags;
 import dev.sterner.culturaldelights.common.registry.CDWorldGenerators;
 import dev.sterner.culturaldelights.common.utils.Constants;
-import dev.sterner.culturaldelights.common.world.AvocadoBundleTreeDecorator;
 import net.fabricmc.api.ModInitializer;
 import net.fabricmc.fabric.api.biome.v1.BiomeModifications;
 import net.fabricmc.fabric.api.itemgroup.v1.FabricItemGroup;
@@ -33,7 +32,6 @@ import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecorator;
 import net.minecraft.world.level.levelgen.feature.treedecorators.TreeDecoratorType;
 import net.minecraft.world.level.storage.loot.LootPool;
 import net.minecraft.world.level.storage.loot.entries.LootItem;
-import vectorwing.farmersdelight.FarmersDelight;
 
 public class CulturalDelights implements ModInitializer {
 	public static final String MOD_ID = "culturaldelights";
@@ -42,8 +40,7 @@ public class CulturalDelights implements ModInitializer {
 
 	public static final ResourceKey<CreativeModeTab> ITEM_GROUP = ResourceKey.create(Registries.CREATIVE_MODE_TAB, new ResourceLocation(MOD_ID));
 
-	public static final TreeDecoratorType<AvocadoBundleTreeDecorator> AVOCADO_BUNDLE_TREE_DECORATOR_TYPE = register(Constants.id("avocado_bundle"), AvocadoBundleTreeDecorator.CODEC);
-
+	
 	private static <P extends TreeDecorator> TreeDecoratorType<P> register(ResourceLocation id, Codec<P> codec) {
 		return Registry.register(BuiltInRegistries.TREE_DECORATOR_TYPE, id, new TreeDecoratorType<>(codec));
 	}
