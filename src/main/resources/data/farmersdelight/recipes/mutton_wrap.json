@@ -2,16 +2,16 @@
   "type": "minecraft:crafting_shapeless",
   "ingredients": [
     {
-      "tag": "c:tortillas"
+      "tag": "c:foods/tortillas"
     },
     {
-      "tag": "c:cooked_mutton"
+      "tag":  "c:foods/cooked_meats/cooked_mutton"
     },
     {
       "tag": "c:salad_ingredients"
     },
     {
-      "tag": "c:crops/onion"
+      "tag": "c:foods/vegetables/onion"
     }
   ],
   "result": {
