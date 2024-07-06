@@ -53,13 +53,11 @@ public class CulturalDelights implements ModInitializer {
 		CDWorldGenerators.init();
 
 		BiomeModifications.addFeature(context -> context.getBiomeKey().equals(Biomes.PLAINS), GenerationStep.Decoration.VEGETAL_DECORATION,
-				CDConfiguredFeatures.PATCH_WILD_CUCUMBERS.key());
-		BiomeModifications.addFeature(context -> context.getBiomeKey().equals(Biomes.SWAMP), GenerationStep.Decoration.VEGETAL_DECORATION,
-				CDConfiguredFeatures.PATCH_WILD_EGGPLANTS.key());
-		BiomeModifications.addFeature(context -> context.getBiomeKey().equals(Biomes.SWAMP), GenerationStep.Decoration.VEGETAL_DECORATION,
-				CDConfiguredFeatures.PATCH_WILD_CUCUMBERS.key());
+				CDConfiguredFeatures.PATCH_WILD_CORN.key());
 		BiomeModifications.addFeature(context -> context.getBiomeKey().equals(Biomes.JUNGLE), GenerationStep.Decoration.VEGETAL_DECORATION,
 				CDConfiguredFeatures.PATCH_WILD_EGGPLANTS.key());
+		BiomeModifications.addFeature(context -> context.getBiomeKey().equals(Biomes.SWAMP), GenerationStep.Decoration.VEGETAL_DECORATION,
+				CDConfiguredFeatures.PATCH_WILD_CUCUMBERS.key());
 
 		TradeOfferHelper.registerVillagerOffers(VillagerProfession.FARMER, 1, factories -> {
 			factories.add(new EmeraldToItemOffer(new ItemStack(CDObjects.CUCUMBER), 1, 10, 2, 0.2F));

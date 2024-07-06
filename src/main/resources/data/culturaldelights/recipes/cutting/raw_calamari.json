@@ -2,7 +2,7 @@
   "type": "farmersdelight:cutting",
   "ingredients": [
     {
-      "tag": "c:foods/squid"
+      "tag": "c:foods/raw_squid"
     }
   ],
   "tool": {
