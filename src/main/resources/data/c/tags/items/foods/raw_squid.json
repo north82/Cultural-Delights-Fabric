@@ -2,7 +2,6 @@
   "replace": false,
   "values": [
 	"culturaldelights:squid",
-	"culturaldelights:glow_squid",
-	"culturaldelights:raw_calamari"
+	"culturaldelights:glow_squid"
   ]
 }
